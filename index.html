@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Pokedex</h1>
+  </header>
+
+  <section class="filters">
+    <div class="filter">
+      <label for="filterName">Nombre</label>
+      <input id="filterName" type="search" placeholder="Buscar por nombre..." />
+    </div>
+
+    <div class="filter">
+      <label for="filterId">ID</label>
+      <input id="filterId" type="number" min="1" placeholder="Número de pokémon" />
+    </div>
+
+    <div class="filter">
+      <label for="filterType">Tipo</label>
+      <select id="filterType">
+        <option value="">Todos</option>
+      </select>
+    </div>
+
+    <button id="filterReset" type="button">Restablecer filtros</button>
+  </section>
+
+  <main>
+    <div id="pokemonGrid" class="grid" aria-live="polite"></div>
+    <div id="loading" class="loading">Cargando pokemones…</div>
+    <div id="error" class="error" hidden></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

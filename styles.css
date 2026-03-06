@@ -1,0 +1,263 @@
+/* Basic layout */
+:root {
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --text: #1b1f33;
+  --muted: #5a6180;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: rgba(64, 79, 163, 0.12);
+  --focus: rgba(47, 109, 249, 0.35);
+  --accent: #3b4cca;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #f5f7ff, #e8edf9);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  padding: 2rem 1.25rem 1rem;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.5rem auto 0;
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1.5rem 1.25rem 0;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-width: 170px;
+}
+
+.filter label {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.94rem;
+  outline: none;
+  width: 100%;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  box-shadow: 0 0 0 3px var(--focus);
+  border-color: rgba(59, 76, 202, 0.25);
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--accent);
+  border-color: rgba(59, 76, 202, 0.4);
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(59, 76, 202, 0.22);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.64;
+  transform: none;
+}
+
+main {
+  padding: 1.5rem 1.25rem 3rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 18px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 260px;
+  position: relative;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card__id {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.card__sprite {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.types {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.type {
+  padding: 0.25rem 0.6rem;
+  border-radius: 900px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.type--grass {
+  background: #6cb24b;
+}
+
+.type--fire {
+  background: #f2634d;
+}
+
+.type--water {
+  background: #539ae2;
+}
+
+.type--bug {
+  background: #92bc2c;
+}
+
+.type--normal {
+  background: #a4acaf;
+}
+
+.type--electric {
+  background: #ead73a;
+  color: #333;
+}
+
+.type--ground {
+  background: #dec16b;
+  color: #333;
+}
+
+.type--fairy {
+  background: #f4b1f4;
+  color: #333;
+}
+
+.type--fighting {
+  background: #d04164;
+}
+
+.type--psychic {
+  background: #f366b9;
+}
+
+.type--rock {
+  background: #c7b78b;
+  color: #333;
+}
+
+.type--ghost {
+  background: #5a6fa3;
+}
+
+.type--ice {
+  background: #75d0c1;
+  color: #333;
+}
+
+.type--dragon {
+  background: #0b6dc7;
+}
+
+.type--dark {
+  background: #544545;
+}
+
+.type--steel {
+  background: #9eb7b8;
+  color: #333;
+}
+
+.type--poison {
+  background: #a33ea1;
+}
+
+.type--flying {
+  background: #8fa8dd;
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+.error {
+  color: #b00020;
+}
