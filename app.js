@@ -1,10 +1,4 @@
-/*
-  Pokedex JS
 
-  - Carga los primeros 151 pokémon desde la API de PokéAPI.
-  - Genera tarjetas con nombre, id, imagen, tipo y stats.
-  - Permite filtrar la lista por ID, nombre (contiene) y tipo.
-*/
 
 const api = {
   base: "https://pokeapi.co/api/v2",
@@ -195,7 +189,6 @@ async function loadAllPokemons() {
 
     populateTypeOptions(typesResult.results);
 
-    // Fetch details for each pokémon in parallel, but limit concurrency to avoid hitting API limits
     const fetchQueue = [...listResult.results];
     const concurrency = 10;
 
